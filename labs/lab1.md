@@ -448,7 +448,7 @@ int main() {
 ### Critical Thinking Questions — Model 3
 
 
-**Q9.** When `n` doubles, what happens to total heap memory? What complexity class describes the memory usage of storing an array of `n` integers?
+**Q9.** When `n` increases, what happens to total heap memory? What complexity class describes the memory usage of storing an array of `n` integers?
 
 > Your answer:
 
