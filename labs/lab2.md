@@ -16,8 +16,6 @@ By the end you should be able to:
 - Describe the key tradeoffs between sorting algorithms: time, space, stability, and adaptivity
 - Read recursive sorting code and trace how it divides and conquers
 
-**POGIL Roles** (rotate each model): Manager · Recorder · Presenter · Reflector
-
 ---
 
 ## Background: What Makes Sorting Hard?
