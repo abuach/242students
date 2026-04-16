@@ -289,7 +289,7 @@ int main() {
         iota(arr.begin(), arr.end(), 0);
 
         double linTime = timeIt([&]{ linearSearch(arr, 0); });      // first element
-        double binTime = timeIt([&]{ binarySearch(arr, arr[n/2]); }); // midpoint
+        double binTime = timeIt([&]{ binarySearch(arr, arr[(n - 1) / 2]); }); // midpoint
 
         cout << setw(12) << n
              << setw(18) << fixed << setprecision(2) << linTime
