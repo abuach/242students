@@ -178,6 +178,7 @@ Chaining resolves collisions by storing a linked list at each bucket. This progr
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 const int TABLE_SIZE = 7;
@@ -700,5 +701,14 @@ int main() {
 
 ---
 
+## Extra Credit Questions
+
+**A1.** The polynomial rolling hash uses multiplier 31 (`h = h * 31 + c`). Java's `String.hashCode()` also uses 31. One reason is that `31 * x == (x << 5) - x`, which some compilers optimize to a shift and subtract instead of a multiply. Why would this matter for hash table performance, and under what conditions would it matter most?
+
+**A2.** Linear probing has better **cache performance** than double hashing even though double hashing produces fewer probes. Explain why fewer probes does not automatically mean faster in practice, referencing what you observed about array versus linked-list performance in Lab 4.
+
+**A3.** Cryptographic hash functions like SHA-256 are deliberately slow and designed to be one-way. Hash table hash functions are designed to be fast and do not need to be one-way. Describe one concrete security attack that becomes possible if you use a fast non-cryptographic hash (like the polynomial hash from this lab) to hash passwords in a login system, and explain how bcrypt or Argon2 defeats it.
+
+---
 
 *Next lab: trees — where we trade O(1) average for O(log n) guaranteed and gain the ability to iterate keys in sorted order.*
