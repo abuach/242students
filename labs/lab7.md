@@ -323,7 +323,7 @@ print("\nPath cost: Each move costs 1 (implicit in our formulation)")
 
 ### Reflection Questions
 
-**Q2:** In the 8-puzzle, we represent states as tuples of 9 numbers. What is one advantage of this representation compared to using a 2D array or other data structures? Consider computational efficiency, memory allocation, mutability and ease of use.
+**Q2:** In the 8-puzzle, we represent states as tuples of 9 numbers. What is one advantage of this representation compared to using a 2D array or other data structures? Consider computational efficiency, hashability, memory allocation, mutability and ease of use.
 
 > Your answer:
 
@@ -679,6 +679,9 @@ This model benchmarks all seven graph algorithms discussed in the course across 
 #include <numeric>
 #include <random>
 #include <algorithm>
+#include <array>  // For std::array
+#include <tuple>  // For std::tuple
+
 using namespace std;
 using Clock = chrono::high_resolution_clock;
 
