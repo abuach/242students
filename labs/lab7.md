@@ -955,8 +955,3 @@ Fill in the table from the printed output.
 **Q12.** You are designing a navigation system (like Google Maps) for a city with 100,000 intersections and 300,000 road segments, all with positive travel times. You need to answer shortest-path queries from any source to any destination in under 50 ms. Which algorithm from Table 6b would you choose and why? Which would you rule out immediately?
 
 > Your answer:
-
----
-
-
-*Next lab: algorithm design — where the question shifts from "which algorithm" to "how do you prove one is correct and derive its complexity from scratch."*
