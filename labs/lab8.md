@@ -1,22 +1,22 @@
-# CPTR 242 — Lab 10: Binary Search Trees, Tries, and Game Trees
+# CPTR 242 — Lab 8: Binary Search Trees & Tries
 
 ---
 
 ## Overview
 
-This lab has five parts. You will observe a working BST — including all three removal cases — measure a Trie and a string BST head-to-head on 50,000 words, and trace the minimax decision tree that powers a game-playing algorithm. No implementation is required; the goal is understanding through careful observation and analysis.
+This lab has four parts. You will observe a working BST — including all three removal cases — and measure a Trie and a string BST head-to-head on 50,000 words. No implementation is required; the goal is understanding through careful observation and analysis.
 
 ---
 
 ## Setup
 
-Save the starter code below as `lab10.cpp` and compile with:
+Save the starter code below as `lab8.cpp` and compile with:
 
 ```bash
-g++ -std=c++17 -O2 -o lab10 lab10.cpp && ./lab10
+g++ -std=c++17 -O2 -o lab8 lab8.cpp && ./lab8
 ```
 
-**Starter code — `lab10.cpp`:**
+**Starter code — `lab8.cpp`:**
 
 ```cpp
 #include <iostream>
