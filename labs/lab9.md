@@ -291,27 +291,13 @@ Run the program and observe the Part C output.
 **[OBSERVE 3]**
 Copy the full output for Part C. For the first seven insertions (`50` through `80`), the root never changes and the root balance factor stays in {−1, 0}. Why? What property of the insertion sequence ensures no rotation is needed during these seven inserts?
 
-**[OBSERVE 4]**
-After inserting `10`, the root balance factor becomes −1 and height becomes 3. After inserting `5`, the root is still `50`, balance factor is still −1, and height is still 3.
-
-If no rotation fires when inserting 5, where does the rotation happen? Add this line after inserting 5 and re-run to check:
-
-```cpp
-cout << "  left child of root: " << tr->left->val
-     << "  bf=" << abf(tr->left) << "\n";
-cout << "  left-left child:    " << tr->left->left->val
-     << "  bf=" << abf(tr->left->left) << "\n";
-```
-
-Record what you see. Which node had balance factor ±2 before `afix` corrected it?
-
 ---
 
 ## Part D — 2-3-4 Tree Insertions
 
 Run the program and observe the Part D output.
 
-**[OBSERVE 5]**
+**[OBSERVE 4]**
 The sequence `10, 20, 30` is inserted into a single root node. When `40` is inserted, the root was a 4-node (`[10|20|30]`) and had to be split before the insert could proceed.
 
 Trace what happens during the split:
@@ -319,7 +305,7 @@ Trace what happens during the split:
 2. What two nodes remain as children?
 3. Where does `40` finally land?
 
-**[OBSERVE 6]**
+**[OBSERVE 5]**
 The tree is built from a purely sorted sequence `10, 20, ..., 80` — exactly the input that destroys a plain BST. Yet the printed height after all 8 insertions is **1**.
 
 Why doesn't sorted input degenerate a 2-3-4 tree the way it degenerates a plain BST? What structural property prevents it?
@@ -330,22 +316,22 @@ Why doesn't sorted input degenerate a 2-3-4 tree the way it degenerates a plain 
 
 Run the program and observe the Part E output.
 
-**[OBSERVE 7]**
+**[OBSERVE 6]**
 The plain BST sorted insert takes roughly **1,000× longer** than the AVL insert for the same input. Both are O(h) per operation, but their heights differ by a factor of ~1,400 (height 19,999 vs 14). Yet the timing ratio is only ~1,000, not ~1,400.
 
 What would explain the timing ratio being smaller than the height ratio? (Hint: think about what operations besides comparisons are happening, and how cache behavior changes with tree depth.)
 
-**[OBSERVE 8]**
+**[OBSERVE 7]**
 For **random** input, all three structures are within a small constant factor of each other in insert time, and the BST height (~32) is within 2× of the AVL height (~16).
 
 What does this tell you about when the plain BST is an acceptable choice? What kind of guarantee does it still fail to provide even for random input?
 
-**[OBSERVE 9]**
+**[OBSERVE 8]**
 The sorted-built search for `std::map` is slower than AVL in this run, even though both are O(log n) with similar heights. One reason: `std::map` uses a Red-Black tree, which is slightly less balanced than AVL (height ≤ 2 log n vs ≤ 1.44 log n).
 
 But there is another reason related to **memory layout**. A `std::map` node is heap-allocated separately and contains extra pointers (parent, color flag). An `ANode` in this lab also heap-allocates, but what does the `std::map` node contain that the lab's `ANode` does not, and how might that affect cache performance?
 
-**[OBSERVE 10]**
+**[OBSERVE 9]**
 You have now seen three balanced structures — AVL tree, Red-Black tree (`std::map`), and 2-3-4 tree — and timed two of them.
 
 Suppose you are building a database index that:
